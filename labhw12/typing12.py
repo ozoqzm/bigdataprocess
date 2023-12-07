@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 
 ### 리스트로 데이터 프레임 생성
+# 리스트면 한 행씩 추가
 info = [['김봄', 19, '남자', 3.45],
         ['오여름', 22, '여자', 4.1],
         ['나가을', 20, '남자', 3.9],
@@ -16,7 +17,7 @@ df1 = df.set_index(keys=['이름']) #인덱스를 이름으로 변경
 # 기존에는 인덱스가 그냥 0 1 2 3 이었음
 print(df1)
 
-# df1 = df1.reset_index() #인덱스 원래대로
+# df1 = df1.reset_index() #인덱스 원래대로.. 원상복귀
 # print(df1)
 
 ### 데이터 추출
@@ -69,7 +70,7 @@ print(df.value_counts()) #모든 데이터에 대해서
 # 성별을 기준으로 평점의 평균 구하기
 print(df.groupby('성별')['나이'].mean())
 
-# 결측치 처리
+# 결측치 처리: 데이터가 없는 경우
 df['계절'] = ['봄', '여름', None, None, None]
 print(df)
 
